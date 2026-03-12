@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Me</title>
+<style>
+body{
+    margin:0;
+    font-family:Segoe UI;
+    background:linear-gradient(to right,#eef2f3,#dfe9f3);
+    text-align:center;
+}
+/* Navigation */
+nav{
+    display:flex;
+    justify-content:center;
+    padding:15px;
+    background:#2c3e50;
+}
+nav ul{
+    display:flex;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+nav li{
+    padding:10px 25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#00bfff;
+}
+
+/* Container */
+
+.container{
+    margin-top:50px;
+}
+
+.container h1{
+    color:#2c3e50;
+}
+
+/* Form Box */
+
+.form-box{
+    background:white;
+    width:350px;
+    margin:auto;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+
+form{
+    text-align:left;
+}
+
+input, textarea{
+    width:100%;
+    padding:8px;
+    margin-top:8px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+input[type="submit"]{
+    background:#2c3e50;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+input[type="submit"]:hover{
+    background:#34495e;
+}
+
+/* Success Message */
+
+#success{
+    display:none;
+    color:green;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+/* Footer */
+
+footer{
+    background:#2c3e50;
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
+
+footer p{
+    color:white;
+    padding:12px;
+    margin:0;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="skills.html">Skills</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="container">
+
+<h1>Contact Me</h1>
+
+<div class="form-box">
+
+<form id="contactForm">
+
+<label>Name</label>
+<input type="text" placeholder="Enter your name" required>
+
+<label>Email</label>
+<input type="email" placeholder="Enter your email" required>
+
+<label>Message</label>
+<textarea rows="5" placeholder="Enter your message" required></textarea>
+
+<input type="submit" value="Send Message">
+
+</form>
+<p id="success">✅ Your message has been submitted successfully!</p>
+</div>
+</div>
+<footer>
+<p>&copy; 2026 My Portfolio</p>
+</footer>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event){
+event.preventDefault(); // stops page refresh
+document.getElementById("success").style.display = "block"; // show message
+this.reset(); // clear form
+});
+</script>
+</body>
+</html>
